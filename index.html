@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Teoría de Conjuntos Probabilidad 425-81</h1>
+  <h4>Operaciones básicas</h4>
+  <labe>Conjunto A</labe>
+  <input type="text" id="conjuntoA">
+  <label>Conjunto B</label>
+  <input type="text" id="conjuntoB">
+  <label>Conjunto C</label>
+  <input type="text" id="conjuntoC">
+  <br>
+  <button onclick="unirConjuntosAB()">Union (A ∪ B)</button>
+  <button onclick="unirConjuntosAC()">Union (A ∪ C)</button>
+  <button onclick="unirConjuntosBC()">Union (B ∪ C)</button>
+  <button onclick="unirConjuntosABC()">Union (A ∪ B ∪ C)</button>
+  <button onclick="interConjuntosAB()">Interseccion (A ∩ B)</button>
+  <button onclick="interConjuntosAC()">Interseccion (A ∩ C)</button>
+  <button onclick="interConjuntosBC()">Interseccion (C ∩ B)</button>
+  <button onclick="interConjuntosABC()">Interseccion (A ∩ B ∩ C)</button>
+  <button onclick="limpiar()">Limpiar</button>
+  <br>
+  <div id="resultado"></div>
+  <br>
+  <canvas id="canvasResultado" width="800" height="800"></canvas>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
