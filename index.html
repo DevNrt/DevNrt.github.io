@@ -9,15 +9,15 @@
 </head>
 
 <body>
-  <h1>Teoría de Conjuntos Probabilidad 425-81</h1>
-  <h4>Operaciones básicas</h4>
-  <labe>Conjunto A</labe>
+  <h1>Ejercicio didactico - Probabilidad 425-81</h1>
+  <label>Conjunto A</labe>
   <input type="text" id="conjuntoA">
   <label>Conjunto B</label>
   <input type="text" id="conjuntoB">
   <label>Conjunto C</label>
   <input type="text" id="conjuntoC">
   <br>
+  <h4>Operaciones básicas</h4>
   <button onclick="unirConjuntosAB()">Union (A ∪ B)</button>
   <button onclick="unirConjuntosAC()">Union (A ∪ C)</button>
   <button onclick="unirConjuntosBC()">Union (B ∪ C)</button>
@@ -28,9 +28,10 @@
   <button onclick="interConjuntosABC()">Interseccion (A ∩ B ∩ C)</button>
   <button onclick="limpiar()">Limpiar</button>
   <br>
-  <div id="resultado"></div>
+  <h4>Resultados:</h4>
+  <div id="resultado" style="font-size: large;"></div>
   <br>
-  <canvas id="canvasResultado" width="800" height="800"></canvas>
+  <canvas id="canvasResultado" width="1000" height="500"></canvas>
   <script src="script.js"></script>
   
 </body>
