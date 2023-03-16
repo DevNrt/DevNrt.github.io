@@ -21,6 +21,52 @@
     <br>
     d. También demuestre que 𝐵 y (𝐴∩-𝐵)  son mutuamente excluyentes y, si B ⊂ 𝐴 , 𝐴 es la unión de dos conjuntos mutuamente excluyentes, 𝐵 y (𝐴∩-𝐵).
   </p>
+  <h2>Teoria aplicada</h2>
+  <p>
+    Ley distributiva:
+    <br>
+    <br>
+    A∩(𝐵∪𝐶)=(𝐴∩𝐵)∪(𝐴∩𝐶)
+    <br>
+    A∪(𝐵∪𝐶)=(𝐴∪𝐵)∩(𝐴∪𝐶)
+    <br>
+    Ley de contradicción
+    <br>
+    <br>
+    𝐴∩-𝐴=∅
+    <br>
+    Ley de tercero excluido
+    <br>
+    <br>
+    𝐴∪-𝐴=∪
+    <br>
+    Ley de identidad
+    <br>
+    <br>
+    𝐴∪∅=𝐴
+    <br>
+    𝐴∩∅=∅
+  </p>
+  <h2>Desarrollo:</h2>
+  <p>
+    a. A=𝐴 ∩ (𝐵 ∪ -𝐵)
+    <br>  
+    <br>
+    b. A=(𝐵 ∪ 𝐴) ∩ (𝐵 ∪ -𝐵) 
+    <br> 
+    <br>
+    c1. ((𝐴 ∩ 𝐵) ∩ 𝐴) ∩ ((𝐴 ∩ -𝐵) ∩ (𝐵 ∩ -𝐵))=∅
+    <br>
+    <br>
+    c2. 𝐴 ∪ ((𝐴 ∩ -𝐵) ∩ (𝐴 ∩ -𝐵))=𝐴
+    <br>
+    <br>
+    d1. ((𝐵 ∩ 𝐴) ∩ (𝐵 ∩ -𝐵))  =∅
+    <br>
+    <br>
+    d2.  𝐴 ∪ (𝐵 ∩ (𝐴 ∩ -𝐵))=𝐴
+  </p>
+  <h2>Graficos</h2>
   <label>Conjunto A</labe>
   <input type="text" id="conjuntoA">
   <label>Conjunto B</label>
@@ -37,6 +83,7 @@
   <button onclick="interConjuntosAC()">Interseccion (A ∩ C)</button>
   <button onclick="interConjuntosBC()">Interseccion (C ∩ B)</button>
   <button onclick="interConjuntosABC()">Interseccion (A ∩ B ∩ C)</button>
+  <button onclick="subConjuntoB(0,'union')">Subconjunto</button>
   <button onclick="limpiar()">Limpiar</button>
   <br>
   <h4>Resultados:</h4>

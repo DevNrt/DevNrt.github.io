@@ -61,6 +61,25 @@ function dibujarConjuntoC(x,t) {
   ctx.fillText("-B", 50, 50);
 }
 
+function subConjuntoB(x,t) {
+  ctx.beginPath();
+  ctx.arc(200 + x, 200, 50, 0, Math.PI * 2);
+  if (x == 0 || t=="union") {
+    ctx.fillStyle = "rgba(250,250,0,0.1)";
+  } else {
+    ctx.fillStyle = "rgba(60,179,113,0.1)";
+  }
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+
+  ctx.font = "30px Arial";
+  ctx.fillStyle = "black";
+  ctx.fillText("B", 190 + x, 200);
+
+  ctx.fillText("-B", 50, 50);
+}
+
 //Obtener conjuntos
 function getConjuntoA() {
   return new Set(document.getElementById("conjuntoA").value.split(","));
