@@ -20,6 +20,8 @@ function dibujarConjuntoA(x,t) {
   ctx.font = "30px Arial";
   ctx.fillStyle = "black";
   ctx.fillText("A", 140 + x, 200);
+
+  ctx.fillText("-B", 50, 50);
 }
 
 function dibujarConjuntoB(x,t) {
@@ -38,6 +40,7 @@ function dibujarConjuntoB(x,t) {
   ctx.font = "30px Arial";
   ctx.fillStyle = "black";
   ctx.fillText("B", 340 - x, 200);
+  ctx.fillText("-B", 50, 50);
 }
 
 function dibujarConjuntoC(x,t) {
@@ -55,6 +58,7 @@ function dibujarConjuntoC(x,t) {
   ctx.font = "30px Arial";
   ctx.fillStyle = "black";
   ctx.fillText("C", 240, 380 - x);
+  ctx.fillText("-B", 50, 50);
 }
 
 //Obtener conjuntos
