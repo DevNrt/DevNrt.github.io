@@ -10,49 +10,56 @@
 
 <body>
   <h1>Ejercicio didactico - Probabilidad 425-81</h1>
-  <h2>Nicolas Rodriguez - 20211020132</h2>
+  <h2>Ejercicio solucionado por David Pacheco - 20182020012</h2>
+  <p> Nicolas Rodriguez - 20211020132</p>
+  <hr>
+  <a target="_blank" href="https://udistritaleduco-my.sharepoint.com/:p:/g/personal/nicrodriguezt_udistrital_edu_co/EdMH30vaJXZPtcReEza-GfgBRmfJdHXm8QajOyAD1MNacg?e=VDRliz">Creditos.</a>
   <p>Use las identidades A=𝐴∩𝑆 y S=B∪-𝐵 y una ley distributiva para demostrar que:
     <br>
-    a. A=(𝐴∩𝐵)∪(𝐴∩-𝐵).  
+    a. A = (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ -𝐵).  
+    <br> 
+    b. Si B ⊂ 𝐴 entonces A= 𝐵 ∪ ( 𝐴 ∩ -𝐵). 
     <br>
-    b. Si B ⊂𝐴 entonces A=𝐵∪(𝐴∩-𝐵). 
-    <br>
-    c. Además, demuestre que (𝐴∩𝐵)  y (𝐴∩-𝐵)  son mutuamente excluyentes y que, por tanto, 𝐴 es la unión de dos conjuntos mutuamente excluyentes, (𝐴∩𝐵)  y (𝐴∩-𝐵).
-    <br>
-    d. También demuestre que 𝐵 y (𝐴∩-𝐵)  son mutuamente excluyentes y, si B ⊂ 𝐴 , 𝐴 es la unión de dos conjuntos mutuamente excluyentes, 𝐵 y (𝐴∩-𝐵).
+    c. Además, demuestre que (𝐴 ∩ 𝐵)  y (𝐴 ∩ -𝐵)  son mutuamente excluyentes y que, por tanto, 𝐴 es la unión de dos conjuntos mutuamente excluyentes, (𝐴 ∩ 𝐵)  y (𝐴 ∩ -𝐵).
+    <br> 
+    d. También demuestre que 𝐵 y (𝐴 ∩ -𝐵)  son mutuamente excluyentes y, si B ⊂ 𝐴 , 𝐴 es la unión de dos conjuntos mutuamente excluyentes, 𝐵 y (𝐴 ∩ -𝐵).
   </p>
+  <div style="display: flex;flex-direction: row;">
+    <div style="flex-direction: column;margin-right: 50px;">
   <h2>Teoria aplicada</h2>
   <p>
     Ley distributiva:
     <br>
     <br>
-    A∩(𝐵∪𝐶)=(𝐴∩𝐵)∪(𝐴∩𝐶)
+    A ∩ (𝐵 ∪ 𝐶) = (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ 𝐶)
     <br>
-    A∪(𝐵∪𝐶)=(𝐴∪𝐵)∩(𝐴∪𝐶)
+    A ∪ (𝐵 ∪ 𝐶) = (𝐴 ∪ 𝐵) ∩ (𝐴 ∪ 𝐶)
     <br>
     Ley de contradicción
     <br>
     <br>
-    𝐴∩-𝐴=∅
+    𝐴 ∩-𝐴= ∅
     <br>
     Ley de tercero excluido
     <br>
     <br>
-    𝐴∪-𝐴=∪
+    𝐴 ∪-𝐴= ∪
     <br>
     Ley de identidad
     <br>
     <br>
-    𝐴∪∅=𝐴
+    𝐴 ∪ ∅ = 𝐴
     <br>
-    𝐴∩∅=∅
+    𝐴 ∩ ∅ = ∅
   </p>
+  </div>
+  <div style="flex-direction: column;">
   <h2>Desarrollo:</h2>
   <p>
-    a. A=𝐴 ∩ (𝐵 ∪ -𝐵)
+    a. A =𝐴 ∩ (𝐵 ∪ -𝐵)
     <br>  
     <br>
-    b. A=(𝐵 ∪ 𝐴) ∩ (𝐵 ∪ -𝐵) 
+    b. A =(𝐵 ∪ 𝐴) ∩ (𝐵 ∪ -𝐵) 
     <br> 
     <br>
     c1. ((𝐴 ∩ 𝐵) ∩ 𝐴) ∩ ((𝐴 ∩ -𝐵) ∩ (𝐵 ∩ -𝐵))=∅
@@ -66,8 +73,12 @@
     <br>
     d2.  𝐴 ∪ (𝐵 ∩ (𝐴 ∩ -𝐵))=𝐴
   </p>
+</div>
+</div>
   <h2>Graficos</h2>
-  <label>Conjunto A</labe>
+  <p>Para ingresar datos en un conjunto se deben separar por comas (,)</p>
+  <br>
+  <label>Conjunto A</label>
   <input type="text" id="conjuntoA">
   <label>Conjunto B</label>
   <input type="text" id="conjuntoB">
@@ -84,12 +95,13 @@
   <button onclick="interConjuntosBC()">Interseccion (C ∩ B)</button>
   <button onclick="interConjuntosABC()">Interseccion (A ∩ B ∩ C)</button>
   <button onclick="subConjuntoB(0,'union')">Subconjunto</button>
-  <button onclick="limpiar()">Limpiar</button>
   <br>
+  <p>Regla de adicción: P(A ∪ B) = P(A) + P(B) – P(A ∩ B)</p>
+  <p>Regla de multiplicación: P(A ∩ B) = P(B) P(A | B)</p>
   <h4>Resultados:</h4>
   <div id="resultado" style="font-size: large;"></div>
   <br>
-  <canvas id="canvasResultado" width="1000" height="500"></canvas>
+  <canvas id="canvasResultado" width="500" height="500"></canvas>
   <script src="script.js"></script>
   
 </body>

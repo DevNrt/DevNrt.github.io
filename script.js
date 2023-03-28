@@ -2,13 +2,13 @@
 const canvas = document.getElementById("canvasResultado");
 const ctx = canvas.getContext("2d");
 
-function limpiar(){
-ctx.clearRect(0,0,800,800);
+function limpiar() {
+  ctx.clearRect(0, 0, 800, 800);
 }
-function dibujarConjuntoA(x,t) {
+function dibujarConjuntoA(x, t) {
   ctx.beginPath();
   ctx.arc(150 + x, 200, 100, 0, Math.PI * 2);
-  if (x == 0 || t=="union") {
+  if (x == 0 || t == "union") {
     ctx.fillStyle = "rgba(250,250,0,0.1)";
   } else {
     ctx.fillStyle = "rgba(60,179,113,0.1)";
@@ -20,14 +20,13 @@ function dibujarConjuntoA(x,t) {
   ctx.font = "30px Arial";
   ctx.fillStyle = "black";
   ctx.fillText("A", 140 + x, 200);
-
   ctx.fillText("-B", 50, 50);
 }
 
-function dibujarConjuntoB(x,t) {
+function dibujarConjuntoB(x, t) {
   ctx.beginPath();
   ctx.arc(350 - x, 200, 100, 0, Math.PI * 2);
-  if (x == 0 || t=="union") {
+  if (x == 0 || t == "union") {
     ctx.fillStyle = "rgba(250,250,0,0.1)";
   } else {
     ctx.fillStyle = "rgba(255,0,0,0.1)";
@@ -43,10 +42,10 @@ function dibujarConjuntoB(x,t) {
   ctx.fillText("-B", 50, 50);
 }
 
-function dibujarConjuntoC(x,t) {
+function dibujarConjuntoC(x, t) {
   ctx.beginPath();
   ctx.arc(250, 375 - x, 100, 0, Math.PI * 2);
-  if (x == 0|| t=="union") {
+  if (x == 0 || t == "union") {
     ctx.fillStyle = "rgba(250,250,0,0.1)";
   } else {
     ctx.fillStyle = "rgba(0,0,255,0.1)";
@@ -61,10 +60,11 @@ function dibujarConjuntoC(x,t) {
   ctx.fillText("-B", 50, 50);
 }
 
-function subConjuntoB(x,t) {
+function subConjuntoB(x, t) {
+  
   ctx.beginPath();
   ctx.arc(200 + x, 200, 50, 0, Math.PI * 2);
-  if (x == 0 || t=="union") {
+  if (x == 0 || t == "union") {
     ctx.fillStyle = "rgba(250,250,0,0.1)";
   } else {
     ctx.fillStyle = "rgba(60,179,113,0.1)";
@@ -75,9 +75,10 @@ function subConjuntoB(x,t) {
 
   ctx.font = "30px Arial";
   ctx.fillStyle = "black";
-  ctx.fillText("B", 190 + x, 200);
+  ctx.fillText("S", 190 + x, 200);
 
   ctx.fillText("-B", 50, 50);
+ 
 }
 
 //Obtener conjuntos
@@ -93,6 +94,7 @@ function getConjuntoC() {
 
 //Unir conjuntos
 function unirConjuntosAB() {
+  limpiar()
   const conjuntoA = getConjuntoA();
   const conjuntoB = getConjuntoB();
   if (conjuntoA.has("") || conjuntoB.has("")) {
@@ -106,17 +108,18 @@ function unirConjuntosAB() {
     );
     if ([...resultadoInter] == "") {
       let x = 0;
-      dibujarConjuntoA(x,"union");
-      dibujarConjuntoB(x,"union");
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(x, "union");
     } else {
       let x = 30;
-      dibujarConjuntoA(x,"union");
-      dibujarConjuntoB(x,"union");
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(x, "union");
     }
   }
 }
 
 function unirConjuntosAC() {
+  limpiar()
   const conjuntoA = getConjuntoA();
   const conjuntoC = getConjuntoC();
   if (conjuntoA.has("") || conjuntoC.has("")) {
@@ -130,17 +133,18 @@ function unirConjuntosAC() {
     );
     if ([...resultadoInter] == "") {
       let x = 0;
-      dibujarConjuntoA(x,"union");
-      dibujarConjuntoC(x,"union");
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoC(x, "union");
     } else {
       let x = 30;
-      dibujarConjuntoA(x,"union");
-      dibujarConjuntoC(x,"union");
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoC(x, "union");
     }
   }
 }
 
 function unirConjuntosBC() {
+  limpiar()
   const conjuntoB = getConjuntoB();
   const conjuntoC = getConjuntoC();
   if (conjuntoB.has("") || conjuntoC.has("")) {
@@ -154,18 +158,19 @@ function unirConjuntosBC() {
     );
     if ([...resultadoInter] == "") {
       let x = 0;
-      dibujarConjuntoB(x,"union");
-      dibujarConjuntoC(x,"union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(x, "union");
     } else {
       let x = 30;
-      dibujarConjuntoB(x,"union");
-      dibujarConjuntoC(x,"union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(x, "union");
     }
   }
 }
 
 function unirConjuntosABC() {
-  var resultAB=false,resultAC=false,resultBC=false;
+  limpiar()
+  var resultAB = false, resultAC = false, resultBC = false;
   const conjuntoA = getConjuntoA();
   const conjuntoB = getConjuntoB();
   const conjuntoC = getConjuntoC();
@@ -175,215 +180,219 @@ function unirConjuntosABC() {
     const resultado = new Set([...conjuntoA, ...conjuntoB, ...conjuntoC]);
     document.getElementById("resultado").innerHTML =
       "Union (A ∪ B ∪ C): " + [...resultado];
-      const resultadoAB = new Set([...conjuntoA].filter((a) => conjuntoB.has(a)));
-      const resultadoAC = new Set([...conjuntoA].filter((a) => conjuntoC.has(a)));
-      const resultadoBC = new Set([...conjuntoB].filter((a) => conjuntoC.has(a)));
-      
-      if ([...resultadoAB] == "") {
-        resultAB=false;
-      }else{    
-        resultAB=true;
-      }  
-      
-      if([...resultadoAC] == ""){
-        resultAC=false;
-      }else{
-        resultAC=true;
-      }
-  
-      if([...resultadoBC] == ""){
-        resultBC=false;
-      }else{
-        resultBC=true;
-      }
-      
-      if(resultAB==true && resultAC==true && resultBC==true){
-        let x = 30;
-        dibujarConjuntoA(x,"union");
-        dibujarConjuntoB(x,"union");
-        dibujarConjuntoC(x,"union");
-      }else if(resultAB==true && resultAC==true && resultBC==false){
-        let x = 30;
-        dibujarConjuntoA(x,"union");
-        dibujarConjuntoB(0,"union");
-        dibujarConjuntoC(0,"union");
-      }else if(resultAB==true && resultAC==false && resultBC==true){
-        let x = 30;
-        dibujarConjuntoA(0,"union");
-        dibujarConjuntoB(x,"union");
-        dibujarConjuntoC(0,"union");
-      }else if(resultAB==true && resultAC==false && resultBC==false){
-        let x = 30;
-        dibujarConjuntoA(x,"union");
-        dibujarConjuntoB(x,"union");
-        dibujarConjuntoC(-15,"union");
-      }else if(resultAB==false && resultAC==true && resultBC==false){
-        let x = 30;
-        dibujarConjuntoA(x,"union");
-        dibujarConjuntoB(-38,"union");
-        dibujarConjuntoC(x,"union");
-      }else if(resultAB==false && resultAC==true && resultBC==true){
-        let x = 30;
-        dibujarConjuntoA(0,"union");
-        dibujarConjuntoB(0,"union");
-        dibujarConjuntoC(x,"union");
-      }else if(resultAB==false && resultAC==false && resultBC==true){
-        let x = 30;
-        dibujarConjuntoA(-38,"union");
-        dibujarConjuntoB(x,"union");
-        dibujarConjuntoC(x,"union");
-      }else if(resultAB==false && resultAC==false && resultBC==false){
-        let x = 0;
-        dibujarConjuntoA(x,"union");
-        dibujarConjuntoB(x,"union");
-        dibujarConjuntoC(x,"union");
-      }
-    
+    const resultadoAB = new Set([...conjuntoA].filter((a) => conjuntoB.has(a)));
+    const resultadoAC = new Set([...conjuntoA].filter((a) => conjuntoC.has(a)));
+    const resultadoBC = new Set([...conjuntoB].filter((a) => conjuntoC.has(a)));
+
+    if ([...resultadoAB] == "") {
+      resultAB = false;
+    } else {
+      resultAB = true;
+    }
+
+    if ([...resultadoAC] == "") {
+      resultAC = false;
+    } else {
+      resultAC = true;
+    }
+
+    if ([...resultadoBC] == "") {
+      resultBC = false;
+    } else {
+      resultBC = true;
+    }
+
+    if (resultAB == true && resultAC == true && resultBC == true) {
+      let x = 30;
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(x, "union");
+    } else if (resultAB == true && resultAC == true && resultBC == false) {
+      let x = 30;
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(0, "union");
+      dibujarConjuntoC(0, "union");
+    } else if (resultAB == true && resultAC == false && resultBC == true) {
+      let x = 30;
+      dibujarConjuntoA(0, "union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(0, "union");
+    } else if (resultAB == true && resultAC == false && resultBC == false) {
+      let x = 30;
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(-15, "union");
+    } else if (resultAB == false && resultAC == true && resultBC == false) {
+      let x = 30;
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(-38, "union");
+      dibujarConjuntoC(x, "union");
+    } else if (resultAB == false && resultAC == true && resultBC == true) {
+      let x = 30;
+      dibujarConjuntoA(0, "union");
+      dibujarConjuntoB(0, "union");
+      dibujarConjuntoC(x, "union");
+    } else if (resultAB == false && resultAC == false && resultBC == true) {
+      let x = 30;
+      dibujarConjuntoA(-38, "union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(x, "union");
+    } else if (resultAB == false && resultAC == false && resultBC == false) {
+      let x = 0;
+      dibujarConjuntoA(x, "union");
+      dibujarConjuntoB(x, "union");
+      dibujarConjuntoC(x, "union");
+    }
+
   }
 }
 
 //Intersectar conjuntos
 function interConjuntosAB() {
+  limpiar()
   const conjuntoA = getConjuntoA();
   const conjuntoB = getConjuntoB();
   if (conjuntoA.has("") || conjuntoB.has("")) {
     alert("Faltan datos");
   } else {
     const resultado = new Set([...conjuntoA].filter((a) => conjuntoB.has(a)));
+    const resultadoText = [...resultado].length == 0 ? "Vacio" : [...resultado]
     document.getElementById("resultado").innerHTML =
-      "Interseccion (A ∩ B): " + [...resultado];
+      "Interseccion (A ∩ B): " + resultadoText;
     if ([...resultado] == "") {
       let x = 0;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(x,"inter");
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(x, "inter");
     } else {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(x,"inter");
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(x, "inter");
     }
   }
 }
 
 function interConjuntosAC() {
+  limpiar()
   const conjuntoA = getConjuntoA();
   const conjuntoC = getConjuntoC();
   if (conjuntoA.has("") || conjuntoC.has("")) {
     alert("Faltan datos");
   } else {
     const resultado = new Set([...conjuntoA].filter((a) => conjuntoC.has(a)));
+    const resultadoText = [...resultado].length == 0 ? "Vacio" : [...resultado]
     document.getElementById("resultado").innerHTML =
-      "Interseccion (A ∩ C): " + [...resultado];
+      "Interseccion (A ∩ C): " + resultadoText;
     if ([...resultado] == "") {
       let x = 0;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoC(x,"inter");
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoC(x, "inter");
     } else {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoC(x,"inter");
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoC(x, "inter");
     }
   }
 }
 
 function interConjuntosBC() {
+  limpiar()
   const conjuntoB = getConjuntoB();
   const conjuntoC = getConjuntoC();
   if (conjuntoB.has("") || conjuntoC.has("")) {
     alert("Faltan datos");
   } else {
     const resultado = new Set([...conjuntoB].filter((a) => conjuntoC.has(a)));
+    const resultadoText = [...resultado].length == 0 ? "Vacio" : [...resultado]
     document.getElementById("resultado").innerHTML =
-      "Interseccion (B ∩ C): " + [...resultado];
+      "Interseccion (B ∩ C): " + resultadoText;
     if ([...resultado] == "") {
       let x = 0;
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(x,"inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(x, "inter");
     } else {
       let x = 30;
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(x,"inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(x, "inter");
     }
   }
 }
 
 function interConjuntosABC() {
-  var resultAB=false,resultAC=false,resultBC=false;
+  limpiar()
+  var resultAB = false, resultAC = false, resultBC = false;
   const conjuntoA = getConjuntoA();
   const conjuntoB = getConjuntoB();
   const conjuntoC = getConjuntoC();
   if (conjuntoA.has("") || conjuntoB.has("") || conjuntoC.has("")) {
     alert("Faltan datos");
   } else {
-    const resultado = new Set(
-      [...conjuntoA].filter(
-        (a) => conjuntoB.has(a),
-        (b) => conjuntoC.has(b)
-      )
-    );
+    const resultado = new Set([...conjuntoA,...conjuntoB,...conjuntoC].filter((a) => conjuntoC.has(a) && conjuntoB.has(a) && conjuntoA.has(a)));
+    const resultadoText = [...resultado].length == 0 ? "Vacio" : [...resultado]
+    
     document.getElementById("resultado").innerHTML =
-      "Interseccion (A ∩ B ∩ C): " + [...resultado];
+      "Interseccion (A ∩ B ∩ C): " + resultadoText;
     const resultadoAB = new Set([...conjuntoA].filter((a) => conjuntoB.has(a)));
     const resultadoAC = new Set([...conjuntoA].filter((a) => conjuntoC.has(a)));
     const resultadoBC = new Set([...conjuntoB].filter((a) => conjuntoC.has(a)));
-    
+
     if ([...resultadoAB] == "") {
-      resultAB=false;
-    }else{    
-      resultAB=true;
-    }  
-    
-    if([...resultadoAC] == ""){
-      resultAC=false;
-    }else{
-      resultAC=true;
+      resultAB = false;
+    } else {
+      resultAB = true;
     }
 
-    if([...resultadoBC] == ""){
-      resultBC=false;
-    }else{
-      resultBC=true;
+    if ([...resultadoAC] == "") {
+      resultAC = false;
+    } else {
+      resultAC = true;
     }
-    
-    if(resultAB==true && resultAC==true && resultBC==true){
+
+    if ([...resultadoBC] == "") {
+      resultBC = false;
+    } else {
+      resultBC = true;
+    }
+
+    if (resultAB == true && resultAC == true && resultBC == true) {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(x,"inter");
-    }else if(resultAB==true && resultAC==true && resultBC==false){
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(x, "inter");
+    } else if (resultAB == true && resultAC == true && resultBC == false) {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(0,"inter");
-      dibujarConjuntoC(0,"inter");
-    }else if(resultAB==true && resultAC==false && resultBC==true){
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(0, "inter");
+      dibujarConjuntoC(0, "inter");
+    } else if (resultAB == true && resultAC == false && resultBC == true) {
       let x = 30;
-      dibujarConjuntoA(0,"inter");
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(0,"inter");
-    }else if(resultAB==true && resultAC==false && resultBC==false){
+      dibujarConjuntoA(0, "inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(0, "inter");
+    } else if (resultAB == true && resultAC == false && resultBC == false) {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(-15,"inter");
-    }else if(resultAB==false && resultAC==true && resultBC==false){
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(-15, "inter");
+    } else if (resultAB == false && resultAC == true && resultBC == false) {
       let x = 30;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(-38,"inter");
-      dibujarConjuntoC(x,"inter");
-    }else if(resultAB==false && resultAC==true && resultBC==true){
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(-38, "inter");
+      dibujarConjuntoC(x, "inter");
+    } else if (resultAB == false && resultAC == true && resultBC == true) {
       let x = 30;
-      dibujarConjuntoA(0,"inter");
-      dibujarConjuntoB(0,"inter");
-      dibujarConjuntoC(x,"inter");
-    }else if(resultAB==false && resultAC==false && resultBC==true){
+      dibujarConjuntoA(0, "inter");
+      dibujarConjuntoB(0, "inter");
+      dibujarConjuntoC(x, "inter");
+    } else if (resultAB == false && resultAC == false && resultBC == true) {
       let x = 30;
-      dibujarConjuntoA(-38,"inter");
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(x,"inter");
-    }else if(resultAB==false && resultAC==false && resultBC==false){
+      dibujarConjuntoA(-38, "inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(x, "inter");
+    } else if (resultAB == false && resultAC == false && resultBC == false) {
       let x = 0;
-      dibujarConjuntoA(x,"inter");
-      dibujarConjuntoB(x,"inter");
-      dibujarConjuntoC(x,"inter");
+      dibujarConjuntoA(x, "inter");
+      dibujarConjuntoB(x, "inter");
+      dibujarConjuntoC(x, "inter");
     }
   }
 
