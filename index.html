@@ -9,20 +9,20 @@
 </head>
 
 <body>
-  <h1>Ejercicio didactico - Probabilidad 425-81</h1>
-  <h2>Ejercicio solucionado por David Pacheco - 20182020012</h2>
-  <p> Nicolas Rodriguez - 20211020132</p>
+  <h1>Applet interactivo</h1>
+  <p>Curso: probabilidad 425-81</p>
+  <p>Ejercicio interactivo desarrollado por Nicolas Rodriguez (20211020132)</p>
   <hr>
-  <a target="_blank" href="https://udistritaleduco-my.sharepoint.com/:p:/g/personal/nicrodriguezt_udistrital_edu_co/EdMH30vaJXZPtcReEza-GfgBRmfJdHXm8QajOyAD1MNacg?e=VDRliz">Creditos.</a>
+  <h2>Ejercicio Ejercicio N°2.5 Sección 2.3 propuesto por Wackerly, Mendenhall y Scheaffer (2007, p26).</h2>
   <p>Use las identidades A=𝐴∩𝑆 y S=B∪-𝐵 y una ley distributiva para demostrar que:
     <br>
-    a. A = (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ -𝐵).  
+    a. A = (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ 𝐵 <sup>c</sup> ).  
     <br> 
-    b. Si B ⊂ 𝐴 entonces A= 𝐵 ∪ ( 𝐴 ∩ -𝐵). 
+    b. Si B ⊂ 𝐴 entonces A= 𝐵 ∪ ( 𝐴 ∩ 𝐵 <sup>c</sup> ). 
     <br>
-    c. Además, demuestre que (𝐴 ∩ 𝐵)  y (𝐴 ∩ -𝐵)  son mutuamente excluyentes y que, por tanto, 𝐴 es la unión de dos conjuntos mutuamente excluyentes, (𝐴 ∩ 𝐵)  y (𝐴 ∩ -𝐵).
+    c. Además, demuestre que (𝐴 ∩ 𝐵)  y (𝐴 ∩ 𝐵 <sup>c</sup> )  son mutuamente excluyentes y que, por tanto, 𝐴 es la unión de dos conjuntos mutuamente excluyentes, (𝐴 ∩ 𝐵)  y (𝐴 ∩ 𝐵 <sup>c</sup> ).
     <br> 
-    d. También demuestre que 𝐵 y (𝐴 ∩ -𝐵)  son mutuamente excluyentes y, si B ⊂ 𝐴 , 𝐴 es la unión de dos conjuntos mutuamente excluyentes, 𝐵 y (𝐴 ∩ -𝐵).
+    d. También demuestre que 𝐵 y (𝐴 ∩ 𝐵 <sup>c</sup> )  son mutuamente excluyentes y, si B ⊂ 𝐴 , 𝐴 es la unión de dos conjuntos mutuamente excluyentes, 𝐵 y (𝐴 ∩ 𝐵 <sup>c</sup> ).
   </p>
   <div style="display: flex;flex-direction: row;">
     <div style="flex-direction: column;margin-right: 50px;">
@@ -43,7 +43,7 @@
     Ley de tercero excluido
     <br>
     <br>
-    𝐴 ∪-𝐴= ∪
+    𝐴 ∪ 𝐴 <sup>c</sup> = ∪
     <br>
     Ley de identidad
     <br>
@@ -56,36 +56,38 @@
   <div style="flex-direction: column;">
   <h2>Desarrollo:</h2>
   <p>
-    a. A =𝐴 ∩ (𝐵 ∪ -𝐵)
+    a. A =𝐴 ∩ (𝐵 ∪ 𝐵 <sup>c</sup> )
     <br>  
     <br>
-    b. A =(𝐵 ∪ 𝐴) ∩ (𝐵 ∪ -𝐵) 
+    b. A =(𝐵 ∪ 𝐴) ∩ (𝐵 ∪ 𝐵 <sup>c</sup> ) 
     <br> 
     <br>
-    c1. ((𝐴 ∩ 𝐵) ∩ 𝐴) ∩ ((𝐴 ∩ -𝐵) ∩ (𝐵 ∩ -𝐵))=∅
+    c1. ((𝐴 ∩ 𝐵) ∩ 𝐴) ∩ ((𝐴 ∩ 𝐵 <sup>c</sup> ) ∩ (𝐵 ∩ 𝐵 <sup>c</sup> ))=∅
     <br>
     <br>
-    c2. 𝐴 ∪ ((𝐴 ∩ -𝐵) ∩ (𝐴 ∩ -𝐵))=𝐴
+    c2. 𝐴 ∪ ((𝐴 ∩ 𝐵 <sup>c</sup> ) ∩ (𝐴 ∩ 𝐵 <sup>c</sup> ))=𝐴
     <br>
     <br>
-    d1. ((𝐵 ∩ 𝐴) ∩ (𝐵 ∩ -𝐵))  =∅
+    d1. ((𝐵 ∩ 𝐴) ∩ (𝐵 ∩ 𝐵 <sup>c</sup> ))  =∅
     <br>
     <br>
-    d2.  𝐴 ∪ (𝐵 ∩ (𝐴 ∩ -𝐵))=𝐴
+    d2.  𝐴 ∪ (𝐵 ∩ (𝐴 ∩ 𝐵 <sup>c</sup> ))=𝐴
   </p>
 </div>
 </div>
   <h2>Graficos</h2>
-  <p>Para ingresar datos en un conjunto se deben separar por comas (,)</p>
+  <p>Para ingresar datos en un conjunto se deben separar por comas (,) de lo contrario le aparecera una advertencia (no se pueden dejar comas cerrando el conjunto)</p>
+
+  <label>Conjunto A: {</label>
+  <input type="text" id="conjuntoA"> }
+  <label>Conjunto B: {</label>
+  <input type="text" id="conjuntoB">}
+  <label>Conjunto C: {</label>
+  <input type="text" id="conjuntoC">}
   <br>
-  <label>Conjunto A</label>
-  <input type="text" id="conjuntoA">
-  <label>Conjunto B</label>
-  <input type="text" id="conjuntoB">
-  <label>Conjunto C</label>
-  <input type="text" id="conjuntoC">
-  <br>
-  <h4>Operaciones básicas</h4>
+  <div style="display: flex;flex-direction: row;">
+    <div style="display: flex; flex-direction: column;margin-right: 50px;">
+  <h3>Operaciones básicas</h3>
   <button onclick="unirConjuntosAB()">Union (A ∪ B)</button>
   <button onclick="unirConjuntosAC()">Union (A ∪ C)</button>
   <button onclick="unirConjuntosBC()">Union (B ∪ C)</button>
@@ -94,16 +96,21 @@
   <button onclick="interConjuntosAC()">Interseccion (A ∩ C)</button>
   <button onclick="interConjuntosBC()">Interseccion (C ∩ B)</button>
   <button onclick="interConjuntosABC()">Interseccion (A ∩ B ∩ C)</button>
-  <button onclick="subConjuntoB(0,'union')">Subconjunto</button>
-  <br>
-  <p>Regla de adicción: P(A ∪ B) = P(A) + P(B) – P(A ∩ B)</p>
-  <p>Regla de multiplicación: P(A ∩ B) = P(B) P(A | B)</p>
-  <h4>Resultados:</h4>
+  <p>P(A ∪ B) = P(A) + P(B) – P(A ∩ B)</p>
+  <p>P(A ∩ B) = P(B) P(A | B)</p>
+</div>
+<div style="flex-direction: column;margin-left: 500px;">
+  <h3>Resultados:</h3>
   <div id="resultado" style="font-size: large;"></div>
   <br>
   <canvas id="canvasResultado" width="500" height="500"></canvas>
   <script src="script.js"></script>
-  
+</div>
+</div>
+  <br>
+  <ref>Adaptado por un ejercicio propuesto por Wackerly, Mendenhall y Scheaffer y inicialmente solucionado por David Pacheco (dpachecom@correo.udistrital.edu.co) </ref>
+  <a target="_blank" href="https://udistritaleduco-my.sharepoint.com/:p:/g/personal/nicrodriguezt_udistrital_edu_co/EdMH30vaJXZPtcReEza-GfgBRmfJdHXm8QajOyAD1MNacg?e=VDRliz">Creditos.</a>
+  <hr>
 </body>
 
 </html>
